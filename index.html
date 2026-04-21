@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AuliaSoft POS</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container"> 
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="logo" width="35" class="me-2">
+                <span class="fw-bold">AuliaSoft POS</span>
+            </a>
+
+            <!-- TOGGLER -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- MENU -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#hero">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#fitur">Fitur</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#product">Keunggulan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content container">
+            <div class="row align-items-center">
+                <!-- TEXT -->
+                <div class="col-md-6 order-2 order-md-1 text-white">
+                    <h1 class="fw-bold">Solusi Kasir Modern untuk UMKM</h1>
+                    <p>Kelola transaksi, stok, dan laporan dengan mudah dan efisien</p>
+                    <a href="#product" class="btn btn-light mt-3">Pelajari Lebih Lanjut</a>
+                </div>
+
+                <!-- IMAGE STACK -->
+                <div class="col-md-6 order-1 order-md-2">
+
+                <!-- DESKTOP STACK -->
+                    <div class="stack-container d-none d-md-flex">
+                        <img src="POS.png" class="stack-img stack-front">
+                        <img src="Laporan.png" class="stack-img stack-middle">
+                        <img src="dashboard.png" class="stack-img stack-back">
+                    </div>
+
+                <!-- MOBILE CAROUSEL -->
+                    <div id="heroCarousel" class="carousel slide carousel-fade d-md-none" data-bs-ride="carousel" data-bs-interval="2500">
+                    <!-- INDICATOR (opsional tapi bagus) -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="POS.png" class="d-block w-100 rounded-3">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="Laporan.png" class="d-block w-100 rounded-3">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="dashboard.png" class="d-block w-100 rounded-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ABOUT -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <div class="about-box mx-auto">
+                <h2 class="mb-3">Apa itu AuliaSoft POS?</h2>
+                <p>
+                    AuliaSoft POS adalah aplikasi kasir modern berbasis hybrid (offline dan cloud) 
+                    yang membantu UMKM mengelola transaksi, stok, dan laporan bisnis dengan lebih cepat,
+                    akurat, dan efisien.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- PROBLEM -->
+    <section id="problem" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Masalah yang Sering Terjadi</h2>
+            <div class="row g-4">
+                <div class="col-md-4 d-flex">
+                    <div class="problem-card-saas">
+                        <div class="icon-box">
+                            <i class="bi bi-graph-down"></i>
+                        </div>
+                        <h5>Catatan Tidak Akurat</h5>
+                        <p>Kesalahan pencatatan sering terjadi dan sulit dilacak kembali.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="problem-card-saas">
+                        <div class="icon-box">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h5>Stok Tidak Terkontrol</h5>
+                        <p>Barang habis tanpa diketahui atau data tidak sesuai.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="problem-card-saas">
+                        <div class="icon-box">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h5>Laporan Lama</h5>
+                        <p>Rekap manual memakan waktu dan rawan kesalahan.</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- SOLUTION -->
+    <section id="solution" class="py-5 solution-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Solusi dari AuliaSoft POS</h2>
+                <p class="text-muted">Semua yang kamu butuhkan untuk operasional bisnis, dalam satu sistem.</p>
+            </div>
+
+            <div class="row align-items-center g-4">
+
+                <!-- LEFT: LIST -->
+                <div class="col-lg-6">
+                    <div class="solution-list-saas">
+                        <div class="solution-item">
+                            <div class="check-icon"><i class="bi bi-check-lg"></i></div>
+                            <div>
+                                <h6>Input transaksi fleksibel</h6>
+                                <p>Data transaksi diinput dengan kontrol penuh sesuai kebutuhan bisnis.</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item">
+                            <div class="check-icon"><i class="bi bi-check-lg"></i></div>
+                            <div>
+                                <h6>Manajemen stok terstruktur</h6>
+                                <p>Kelola stok barang secara detail dan mudah dipantau.</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item">
+                            <div class="check-icon"><i class="bi bi-check-lg"></i></div>
+                            <div>
+                                <h6>Laporan bisnis lengkap</h6>
+                                <p>Akses laporan penjualan, pembelian, dan keuangan dalam satu sistem.</p>
+                            </div>
+                        </div>
+
+                        <div class="solution-item">
+                            <div class="check-icon"><i class="bi bi-check-lg"></i></div>
+                            <div>
+                                <h6>Sistem terintegrasi</h6>
+                                <p>Semua proses bisnis saling terhubung dalam satu dashboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: HIGHLIGHT -->
+                <div class="col-lg-6">
+                    <div class="solution-highlight-box text-center">
+                    <h3>Lebih Cepat. Lebih Akurat.</h3>
+                    <p class="mb-4">Kelola bisnis tanpa ribet, semua dalam satu dashboard.</p>
+                    <a href="#fitur" class="btn btn-light px-4">Lihat Fitur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- FEATURES -->
+    <section id="fitur" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Fitur Lengkap untuk Bisnis Anda</h2>
+                <p class="text-muted">Semua kebutuhan operasional dalam satu sistem terintegrasi</p>
+            </div>
+            <div class="row g-4">
+                <!-- Kelola Pengguna -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-people"></i>
+                            <p>Kelola Pengguna</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="user.png" class="img-fluid rounded">
+                            <small>Atur user, role, dan hak akses dengan mudah.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kontak -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-person-lines-fill"></i>
+                            <p>Kontak</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="kontak.png">
+                            <small>Kelola data pelanggan dan supplier.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-box"></i>
+                            <p>Produk</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="produk.png">
+                            <small>Atur produk, kategori, dan harga.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produksi -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-building"></i>
+                            <p>Produksi</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="produksi.png">
+                            <small>Kelola proses produksi dan bahan baku.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perbaikan -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-tools"></i>
+                            <p>Perbaikan</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="perbaikan.png">
+                            <small>Catat dan kelola layanan perbaikan.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pembelian -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-cart-plus"></i>
+                            <p>Pembelian</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="pembelian.png">
+                            <small>Kelola pembelian barang dari supplier.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penjualan -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-cart-check"></i>
+                            <p>Penjualan</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="penjualan.png">
+                            <small>Proses transaksi penjualan dengan mudah.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transfer Stok -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-arrow-left-right"></i>
+                            <p>Transfer Stok</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="transfer.png">
+                            <small>Pindahkan stok antar gudang atau cabang.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penyesuaian Stok -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-sliders"></i>
+                            <p>Penyesuaian Stok</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="adjust.png">
+                            <small>Sesuaikan stok sesuai kondisi nyata.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biaya -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-cash"></i>
+                            <p>Biaya</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="biaya.png">
+                            <small>Catat semua pengeluaran bisnis.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Akun Pembayaran -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-credit-card"></i>
+                            <p>Akun Pembayaran</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="payment.png">
+                            <small>Kelola metode pembayaran bisnis.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Akuntansi -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-journal-text"></i>
+                            <p>Akuntansi</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="akuntansi.png">
+                            <small>Laporan keuangan terstruktur dan rapi.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laporan -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-bar-chart"></i>
+                            <p>Laporan</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="laporan.png">
+                            <small>Lihat performa bisnis secara real-time.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-calendar-check"></i>
+                            <p>Booking</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="booking.png">
+                            <small>Kelola reservasi pelanggan.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dapur -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-fire"></i>
+                            <p>Dapur</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="dapur.png">
+                            <small>Monitoring pesanan untuk operasional dapur.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pesanan -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-receipt"></i>
+                            <p>Pesanan</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="pesanan.png">
+                            <small>Kelola order masuk dengan lebih rapi.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-envelope"></i>
+                            <p>Template Notifikasi</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="template.png">
+                            <small>Buat template pesan otomatis ke pelanggan.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengaturan -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="feature-card" onclick="toggleFeature(this)">
+                        <div class="feature-header">
+                            <i class="bi bi-gear"></i>
+                            <p>Pengaturan</p>
+                        </div>
+                        <div class="feature-expand">
+                            <img src="settings.png">
+                            <small>Atur sistem sesuai kebutuhan bisnis.</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- PRODUCT KNOWLEDGE -->
+    <section id="product" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Mengapa Memilih AuliaSoft POS?</h2>
+
+            <div class="row g-4">
+                <!-- CARD -->
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-cloud-check"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Sistem Hybrid (Offline & Online)</h5>
+                            <p class="card-text">
+                            Tetap bisa digunakan tanpa internet dan tetap dapat diakses secara online kapan saja.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-cash-stack"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Harga Fleksibel</h5>
+                            <p class="card-text">
+                            Menyediakan berbagai pilihan harga sesuai kebutuhan usaha kecil hingga menengah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-shop"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Cocok untuk Berbagai Usaha</h5>
+                            <p class="card-text">
+                            Digunakan untuk toko retail, minimarket, hingga usaha makanan dan minuman.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-people"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Mudah Digunakan</h5>
+                            <p class="card-text">
+                            Dirancang untuk pemilik usaha dan kasir tanpa membutuhkan kemampuan teknis tinggi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-grid"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Fitur Lengkap</h5>
+                            <p class="card-text">
+                            Mulai dari transaksi kasir, manajemen stok, hingga laporan penjualan tersedia dalam satu sistem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-sliders"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Dapat Disesuaikan</h5>
+                            <p class="card-text">
+                            Mendukung pengaturan harga, diskon, dan kategori sesuai kebutuhan bisnis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-graph-up"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Laporan Real-Time</h5>
+                            <p class="card-text">
+                            Memantau penjualan dan performa bisnis secara langsung tanpa perlu rekap manual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-pc-display"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Dukungan Perangkat Lengkap</h5>
+                            <p class="card-text">
+                            Terintegrasi dengan printer struk, barcode scanner, dan perangkat kasir lainnya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-shield-check"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Stabil & Andal</h5>
+                            <p class="card-text">
+                            Sistem dirancang untuk transaksi cepat dan minim error dalam operasional harian.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-arrow-repeat"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Terus Dikembangkan</h5>
+                            <p class="card-text">
+                            Mendapatkan pembaruan fitur secara berkala untuk mengikuti kebutuhan bisnis modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-headset"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Support Profesional</h5>
+                            <p class="card-text">
+                            Tersedia layanan bantuan untuk memastikan sistem berjalan dengan baik.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="card pk-card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="pk-icon mb-3">
+                            <i class="bi bi-bar-chart-line"></i> <!-- ICON -->
+                            </div>
+                            <h5 class="card-title">Mendukung Pertumbuhan Bisnis</h5>
+                            <p class="card-text">
+                            Dirancang untuk membantu bisnis berkembang dengan sistem yang scalable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Pertanyaan yang Sering Ditanyakan</h2>
+                <p class="text-muted">Beberapa hal yang mungkin ingin Anda ketahui</p>
+            </div>
+            <div class="accordion faq-accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        Apakah AuliaSoft POS bisa digunakan offline?
+                    </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Ya, aplikasi dapat digunakan secara offline dan akan tersinkronisasi saat kembali online.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Apakah data harus diinput manual?
+                    </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Ya, input dilakukan secara manual untuk memberikan kontrol penuh terhadap data bisnis Anda.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Apakah bisa digunakan untuk berbagai jenis usaha?
+                    </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Bisa, AuliaSoft POS dirancang fleksibel untuk berbagai jenis bisnis seperti toko, restoran, dan jasa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONI SECTION (SWIPER) ===== -->
+    <section id="testimoni" class="py-5 bg-light">
+        <div class="container text-center">
+
+            <h2 class="fw-bold mb-3">Dipercaya Banyak Bisnis</h2>
+            <p class="text-muted mb-5">Pengalaman nyata dari pengguna AuliaSoft POS</p>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni10.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>Koppontren Al Fatah</h5>
+                            <p>Dari transaksi manual hingga online, fitur lengkap dan support cepat sangat membantu operasional kami.</p>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni9.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>Koperasi Sahabat Syariah Sejahtera</h5>
+                            <p>Laporan keuangan jadi lebih lengkap dan mempermudah proses kerja kami.</p>
+                        </div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni8.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>Toko Nazril BNS</h5>
+                            <p>Sangat membantu aktivitas toko, dan tim support selalu responsif.</p>
+                        </div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni7.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>Toko Merdu Jaya Mart</h5>
+                            <p>Manajemen toko jadi jauh lebih mudah dan terstruktur.</p>
+                        </div>
+                    </div>
+                    <!-- 5 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni6.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>KSU Al Wazro Aisyiyah Martapura</h5>
+                            <p>Laporan keuangan jadi lebih teliti dan tepat waktu.</p>
+                        </div>
+                    </div>
+                    <!-- 6 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni5.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>CV LAPKES MART KKSU SYARIAH</h5>
+                            <p>Pengelolaan stok dan laporan penjualan menjadi lebih mudah.</p>
+                        </div>
+                    </div>
+                    <!-- 7 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni4.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>Toko Rahmi</h5>
+                            <p>Membantu meningkatkan akuntabilitas dan manajemen toko kami.</p>
+                        </div>
+                    </div>
+                    <!-- 8 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni3.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>BMT Karima Sejahtera</h5>
+                            <p>Sistem laporan real-time sangat membantu operasional bisnis kami.</p>
+                        </div>
+                    </div>
+                    <!-- 9 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni2.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>KKMP Cengkareng Barat</h5>
+                            <p>Aplikasi lengkap dan layanan support sangat memuaskan.</p>
+                        </div>
+                    </div>
+                    <!-- 10 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="testimoni1.png">
+                            <div class="stars">★★★★★</div>
+                            <span class="badge bg-warning text-dark mb-2">5/5</span>
+                            <h5>KKMP Bojong Nangka</h5>
+                            <p>Mudah digunakan dan sudah terintegrasi dengan sistem POS kami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Kontak + CTA -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="contact-box text-center">
+            <h2 class="fw-bold mb-3">Siap Mulai Digitalisasi Bisnis Anda?</h2>
+            <p class="text-muted mb-4">
+                Gunakan AuliaSoft POS untuk mengelola bisnis dengan lebih mudah dan efisien.
+            </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://pos.auliasoft.com/business/register" class="btn btn-primary px-4">
+                    Coba Sekarang
+                    </a>
+                    <a href="https://wa.me/6281241945881?text=Saya%20ingin%20bertanya%20mengenai%20Aplikasi%20POS%20Auliasoft" 
+                    target="_blank"
+                    class="btn btn-outline-primary px-4">
+                    <i class="bi bi-whatsapp"></i> Hubungi Kami
+                    </a>
+                </div>
+                <div class="contact-info mt-4">
+                    <p class="mb-1"><i class="bi bi-envelope"></i> info.awlia@gmail.com</p>
+                    <p><i class="bi bi-whatsapp"></i> +62 812-4194-5881</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- FOOTER -->
+    <footer class="text-center py-3 bg-light">
+         <p class="mb-0 small text-muted">© 2026 AuliaSoft POS</p>
+    </footer>
+
+<!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
