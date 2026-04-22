@@ -1,4 +1,4 @@
-// Smooth scroll tambahan (optional)
+// ================= SMOOTH SCROLL =================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
@@ -8,30 +8,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// navbar berubah saat scroll
-window.addEventListener("scroll", function () {
-  const navbar = document.getElementById("navbar");
+// ================= NAVBAR =================
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 50);
+  navbar.classList.toggle("shrink", window.scrollY > 50);
 });
 
-
-// active link saat scroll
+// ================= ACTIVE LINK =================
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
   let current = "";
-  const navbar = document.getElementById("navbar");
-
-  if (window.scrollY > 50) {
-    navbar.classList.add("shrink");
-  } else {
-    navbar.classList.remove("shrink");
-  }
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
-    if (scrollY >= sectionTop) {
+    const sectionTop = section.offsetTop - 120;
+    if (window.scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
@@ -44,10 +38,9 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// ================= REVEAL ANIMATION =================
 function revealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
-
-  reveals.forEach((el) => {
+  document.querySelectorAll(".reveal").forEach(el => {
     const windowHeight = window.innerHeight;
     const elementTop = el.getBoundingClientRect().top;
 
@@ -59,67 +52,99 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
+// ================= HERO STACK =================
 const images = document.querySelectorAll(".stack-img");
 
 function rotateStack() {
-  images.forEach((img) => {
+  images.forEach(img => {
     if (img.classList.contains("stack-front")) {
-      img.classList.remove("stack-front");
-      img.classList.add("stack-back");
-    } 
-    else if (img.classList.contains("stack-middle")) {
-      img.classList.remove("stack-middle");
-      img.classList.add("stack-front");
-    } 
-    else if (img.classList.contains("stack-back")) {
-      img.classList.remove("stack-back");
-      img.classList.add("stack-middle");
+      img.classList.replace("stack-front", "stack-back");
+    } else if (img.classList.contains("stack-middle")) {
+      img.classList.replace("stack-middle", "stack-front");
+    } else if (img.classList.contains("stack-back")) {
+      img.classList.replace("stack-back", "stack-middle");
     }
   });
 }
 
-// loop tiap 3 detik
 setInterval(rotateStack, 3000);
 
+// ================= HERO CAROUSEL =================
 const carousel = document.querySelector('#heroCarousel');
 
 if (carousel) {
   new bootstrap.Carousel(carousel, {
     interval: 2500,
     ride: 'carousel',
-    pause: false, // tetap jalan walau disentuh
+    pause: false,
     touch: true,
     wrap: true
   });
 }
 
-function toggleFeature(el) {
-  const isActive = el.classList.contains("active");
-
-  // tutup semua dulu (biar cuma 1 kebuka)
-  document.querySelectorAll(".feature-card").forEach(card => {
-    card.classList.remove("active");
-  });
-
-  // buka kalau sebelumnya belum aktif
-  if (!isActive) {
-    el.classList.add("active");
-  }
-}
-
-new Swiper(".mySwiper", {
+// ================= SWIPER TESTIMONI =================
+const swiper = new Swiper(".mySwiper", {
   loop: true,
   centeredSlides: true,
   slidesPerView: 3,
   spaceBetween: 30,
 
+  speed: 500, // ⬅️ normal smooth (bukan jalan terus)
+
   autoplay: {
-    delay: 2500,
+    delay: 2500, // ⬅️ kasih jeda biar center kebaca
     disableOnInteraction: false,
   },
 
   breakpoints: {
     0: { slidesPerView: 1 },
     768: { slidesPerView: 3 }
-  }
+  },
+
+  // 🔥 penting buat stabil center
+  watchSlidesProgress: true,
+  slideToClickedSlide: true
+});
+
+// ================= PRICING COLLAPSE =================
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  const target = document.querySelector(btn.getAttribute('data-bs-target'));
+
+  if (!target) return;
+
+  target.addEventListener('show.bs.collapse', () => {
+    btn.innerText = "Sembunyikan";
+  });
+
+  target.addEventListener('hide.bs.collapse', () => {
+    btn.innerText = "Lihat Selengkapnya";
+  });
+});
+
+// ================= FEATURE EXPAND =================
+const featureCards = document.querySelectorAll('.feature-card');
+
+featureCards.forEach(card => {
+  card.addEventListener('click', () => {
+
+    const isActive = card.classList.contains('active');
+
+    // reset semua
+    featureCards.forEach(c => {
+      c.classList.remove('active');
+      c.classList.remove('dim');
+    });
+
+    // kalau belum aktif → aktifkan
+    if (!isActive) {
+      card.classList.add('active');
+
+      // dim card lain
+      featureCards.forEach(c => {
+        if (c !== card) {
+          c.classList.add('dim');
+        }
+      });
+    }
+  });
 });
