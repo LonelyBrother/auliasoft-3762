@@ -405,39 +405,270 @@ section {
 }
 
 /* ===== USE CASES ===== */
-.usecase-card {
+/* ===== USE CASE SECTION ===== */
+.usecase-diagram {
+  background: linear-gradient(180deg, #f8f9fa, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background glow */
+.usecase-diagram::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13,110,253,0.15), transparent 70%);
+  top: -150px;
+  right: -150px;
+  z-index: 0;
+}
+
+/* ===== IMAGE ===== */
+.usecase-img {
+  max-width: 850px;
+  border-radius: 20px;
+  padding: 10px;
   background: white;
+
+  box-shadow:
+    0 25px 60px rgba(13,110,253,0.15),
+    0 10px 25px rgba(0,0,0,0.1);
+
+  transition: 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* hover zoom subtle */
+.usecase-img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== CARD ===== */
+.usecase-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   padding: 24px;
   border-radius: 18px;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  border: 1px solid rgba(255,255,255,0.4);
+
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   height: 100%;
 }
 
+/* hover effect */
 .usecase-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(13,110,253,0.15);
+  box-shadow:
+    0 20px 45px rgba(13,110,253,0.2),
+    0 10px 20px rgba(0,0,0,0.1);
 }
 
-.usecase-card .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
+/* ===== TITLE ===== */
 .usecase-card h5 {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  position: relative;
 }
 
+/* underline accent */
+.usecase-card h5::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #0d6efd;
+  display: block;
+  margin-top: 6px;
+  border-radius: 10px;
+}
+
+/* ===== LIST ===== */
+.usecase-card ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.usecase-card li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+  position: relative;
+}
+
+/* custom bullet */
+.usecase-card li::marker {
+  color: #0d6efd;
+}
+
+/* ===== PARAGRAPH ===== */
 .usecase-card p {
   font-size: 14px;
   color: #666;
+  line-height: 1.6;
+}
+
+/* ===== SECTION TITLE ===== */
+.usecase-diagram .section-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .usecase-img {
+    max-width: 100%;
+  }
+}
+
+/* ===== PROCESS & POLICIES SECTION ===== */
+.process-poli-section {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* TITLE */
+.process-poli-section .section-title {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.process-poli-section .section-desc {
+  color: #666;
+  max-width: 500px;
+}
+
+/* CARD */
+.process-poli-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  height: 100%;
+
+  border: 1px solid rgba(13,110,253,0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* subtle glow effect */
+.process-poli-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(13,110,253,0.12),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* hover */
+.process-poli-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 60px rgba(13,110,253,0.18);
+}
+
+.process-poli-card:hover::before {
+  opacity: 1;
+}
+
+/* ICON */
+.icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  background: rgba(13,110,253,0.1);
+  color: #0d6efd;
+
+  box-shadow: 0 8px 20px rgba(13,110,253,0.15);
+}
+
+/* TITLE CARD */
+.process-poli-card h5 {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* LIST */
+.process-poli-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ITEM */
+.process-poli-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* NUMBER BULLET */
+.process-poli-card li span {
+  min-width: 28px;
+  height: 28px;
+
+  background: #e7f1ff;
+  color: #0d6efd;
+
+  font-weight: 600;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .process-poli-section .section-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-poli-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .process-poli-section .section-title {
+    font-size: 26px;
+  }
 }
 
 /* ===== CUSTOMIZATION ===== */
@@ -752,92 +983,206 @@ section {
   }
 }
 
-/* ===== PRICING ===== */
-/* ===== SECTION ===== */
+/* ===== PRICING SECTION ===== */
 .pricing-section {
-  padding: 80px 0;
+  padding: 90px 0;
   background: linear-gradient(to bottom, #f8fbff, #ffffff);
+}
+
+#pricing .row {
+  display: flex;
+  align-items: stretch;
+}
+
+/* ===== ANIMATION ===== */
+.modal-content {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== CARD ===== */
 .price-card {
-  background: white;
-  border-radius: 24px;
-  padding: 35px 30px;
-  position: relative;
-  overflow: hidden;
-
-  z-index: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
   height: 100%;
+
   display: flex;
   flex-direction: column;
 
-  transition: all 0.35s ease;
+  transition: all 0.3s ease;
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* hover halus */
 .price-card:hover {
   transform: translateY(-8px);
-  box-shadow:
-    0 20px 50px rgba(13,110,253,0.15);
+  box-shadow: 0 20px 45px rgba(13,110,253,0.15);
 }
 
-/* glow subtle */
-.price-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(13,110,253,0.12),
-    transparent
-  );
-  opacity: 0;
-  transition: 0.4s;
-  pointer-events: none; 
-  z-index: 0;
-}
-
-.price-card:hover::before {
-  opacity: 1;
-}
-
-/* ===== TITLE ===== */
-.price-card h5 {
+/* ===== PLAN ===== */
+.plan {
+  font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #888;
+  letter-spacing: 1px;
 }
 
 /* ===== PRICE ===== */
 .price {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 800;
   margin: 10px 0;
   color: #0d6efd;
+}
+
+.billing-toggle {
+  display: inline-flex;
+  background: #eef3ff;
+  padding: 6px;
+  border-radius: 30px;
+}
+
+.billing-toggle span {
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: 0.3s;
+}
+
+.billing-toggle span.active {
+  background: #0d6efd;
+  color: white;
+  font-weight: 500;
+}
+
+.billing-text {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 15px;
 }
 
 /* ===== DESC ===== */
 .desc {
   font-size: 14px;
   color: #666;
+  margin-bottom: 20px;
+  min-height: 50px;
 }
+
+/* ===== FEATURE LIST ===== */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* check icon */
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 20px;
+  height: 20px;
+
+  background: #e7f1ff;
+  color: #0d6efd;
+
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== BADGE ===== */
+.price-card .badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+/* ===== UMKM ===== */
+.price-card.umkm {
+  border: 2px solid #198754;
+}
+
+.price-card.umkm .price {
+  color: #198754;
+}
+
+/* ===== BEST ===== */
+.price-card.popular {
+  border: 2px solid #0d6efd;
+  transform: scale(1.05);
+}
+
+/* ===== PREMIUM ===== */
+.price-card.premium {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
+}
+
+.price-card.premium .price {
+  color: gold;
+}
+
+.price-card.premium li {
+  color: #ddd;
+}
+
+.price-card.premium li::before {
+  background: rgba(255,255,255,0.15);
+  color: gold;
+}
+
+
 
 /* ===== BUTTON ===== */
-.toggle-btn {
+.price-card .btn {
   margin-top: auto;
   border-radius: 10px;
-  padding: 10px;
   font-weight: 500;
-  transition: 0.3s;
 }
 
-.toggle-btn:hover {
-  background: #0d6efd;
-  color: white;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .price-card {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .price-card.active {
+    transform: scale(1);
+  }
 }
 
 /* ===== POPULAR (MAIN HERO CARD) ===== */
@@ -958,6 +1303,107 @@ section {
 .feature-card.dim {
   opacity: 0.4;
   transform: scale(0.95);
+}
+
+/* ===== COMPLIMENTARY SECTION ===== */
+.complementary-section {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+/* CARD */
+.comp-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  height: 100%;
+
+  border: 1px solid rgba(13,110,253,0.08);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle gradient glow */
+.comp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(13,110,253,0.12),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* hover effect */
+.comp-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow:
+    0 25px 60px rgba(13,110,253,0.2);
+}
+
+.comp-card:hover::before {
+  opacity: 1;
+}
+
+/* IMAGE WRAPPER */
+.comp-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+
+  transition: 0.4s;
+}
+
+/* zoom dikit pas hover */
+.comp-card:hover .comp-img {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+.comp-card h6 {
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+/* DESC */
+.comp-card p {
+  font-size: 13px;
+  color: #666;
+  min-height: 40px;
+}
+
+/* PRICE (BIAR MENONJOL) */
+.price {
+  display: inline-block;
+  margin-top: 10px;
+
+  font-weight: 700;
+  font-size: 18px;
+
+  color: #0d6efd;
+}
+
+/* OPTIONAL BADGE */
+.comp-card .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  background: #0d6efd;
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 /* ================= FAQ ================= */
@@ -1108,6 +1554,52 @@ section {
 /* smooth loop feel */
 .swiper-wrapper {
   transition-timing-function: linear !important;
+}
+
+/* ================= PAYMENT ================= */
+.payment-modal {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.payment-box {
+  background: #e9f7ef;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.payment-box h3 {
+  color: #198754;
+  font-weight: 700;
+}
+
+.bank-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.bank-logo {
+  width: 50px;
+  height: 50px;
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.bank-box .info p {
+  margin: 0;
+}
+
+.btn-success {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 500;
 }
 
 /* ================= OTHER PRODUCTS ================= */
