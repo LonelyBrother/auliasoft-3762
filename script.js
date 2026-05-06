@@ -10,6 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ================= MOBILE NAVBAR CLOSE =================
+const navbarCollapse = document.querySelector(".navbar-collapse");
+const navItems = document.querySelectorAll(".nav-link");
+
+navItems.forEach(item => {
+  item.addEventListener("click", () => {
+
+    // cek kalau navbar mobile sedang terbuka
+    if (navbarCollapse.classList.contains("show")) {
+
+      // tutup collapse bootstrap
+      const bsCollapse =
+        bootstrap.Collapse.getInstance(navbarCollapse);
+
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    }
+  });
+});
+
   // ================= NAVBAR =================
   const navbar = document.getElementById("navbar");
 

@@ -4,10 +4,22 @@
 }
 
 /* ================= GLOBAL ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   scroll-behavior: smooth;
   padding-top: var(--navbar-height);
   font-family: system-ui, -apple-system, sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 section {
@@ -40,6 +52,7 @@ section {
 .navbar-brand span {
   font-size: 18px;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 #navbar.shrink .navbar-brand span {
@@ -737,20 +750,23 @@ section {
 }
 
 /* ===== PROCESS & POLICIES SECTION ===== */
-.process-poli-section {
+.process-poli-section,
+#process-poli {
   background: linear-gradient(to bottom, #f8f9fa, #ffffff);
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
 /* TITLE */
-.process-poli-section .section-title {
+.process-poli-section .section-title,
+#process-poli .section-title {
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 10px;
 }
 
-.process-poli-section .section-desc {
+.process-poli-section .section-desc,
+#process-poli .section-desc {
   color: #666;
   max-width: 500px;
 }
@@ -863,57 +879,200 @@ section {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .process-poli-section .section-title {
+  .process-poli-section .section-title,
+  #process-poli .section-title {
     font-size: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .process-poli-section {
+  .process-poli-section,
+  #process-poli {
     padding-top: 60px;
     padding-bottom: 60px;
   }
 
-  .process-poli-section .section-title {
+  .process-poli-section .section-title,
+  #process-poli .section-title {
     font-size: 26px;
   }
 }
 
-/* ===== CUSTOMIZATION ===== */
-.custom-section {
-  background: #f8f9fa;
+/* ========================================= CUSTOMIZATION SECTION ========================================= */
+
+.customization-section {
+    padding: 110px 0;
+    background: linear-gradient(
+        to bottom,
+        #f7faff,
+        #ffffff
+    );
+    position: relative;
+    overflow: hidden;
 }
+
+/* ========================================= HEADER ========================================= */
+
+.customization-header {
+    max-width: 760px;
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+.custom-title {
+    font-size: 48px;
+    font-weight: 625;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 22px;
+}
+
+.custom-title span {
+    color: #2563eb;
+}
+
+.custom-subtitle {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6b7280;
+}
+
+/* ========================================= GRID ========================================= */
+
+.customization-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* ========================================= CARD ========================================= */
 
 .custom-card {
-  background: white;
-  padding: 24px;
-  border-radius: 18px;
-  text-align: left;
-  transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  height: 100%;
-}
-
-.custom-card i {
-  font-size: 28px;
-  color: #0d6efd;
-  margin-bottom: 12px;
-  display: inline-block;
-}
-
-.custom-card h5 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.custom-card p {
-  font-size: 14px;
-  color: #666;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 38px 32px;
+    position: relative;
+    transition: 0.35s ease;
+    border: 1px solid #eef2ff;
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.04);
+    height: 100%;
 }
 
 .custom-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(13,110,253,0.15);
+    transform: translateY(-8px);
+    border-color: rgba(37, 99, 235, 0.18);
+
+    box-shadow:
+        0 20px 40px rgba(37, 99, 235, 0.08);
+}
+
+/* ========================================= ICON ========================================= */
+
+.custom-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(37, 99, 235, 0.12),
+        rgba(59, 130, 246, 0.04)
+    );
+
+    margin-bottom: 28px;
+}
+
+.custom-icon i {
+    font-size: 24px;
+    color: #2563eb;
+}
+
+/* ========================================= TEXT ========================================= */
+
+.custom-card h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.custom-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #6b7280;
+    margin-bottom: 0;
+}
+
+/* ========================================= LARGE CARD ========================================= */
+
+.custom-card-large {
+    grid-column: span 3;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    padding: 42px;
+}
+
+.custom-card-large .custom-icon {
+    margin-bottom: 0;
+    min-width: 72px;
+}
+
+/* ========================================= RESPONSIVE ========================================= */
+
+@media (max-width: 991px) {
+
+    .customization-section {
+        padding: 90px 0;
+    }
+
+    .custom-title {
+        font-size: 40px;
+    }
+
+    .customization-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-card-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .custom-title {
+        font-size: 34px;
+    }
+
+    .custom-subtitle {
+        font-size: 15px;
+    }
+
+    .customization-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-card-large {
+        grid-column: span 1;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .custom-card {
+        padding: 32px 26px;
+    }
+
+    .custom-card h5 {
+        font-size: 22px;
+    }
 }
 
 /* ===== COMPETITOR ===== */
@@ -973,25 +1132,13 @@ section {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 992px) {
-        .roadmap-modern {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .roadmap-modern {
-            grid-template-columns: 1fr;
-        }
-    }
-    .audience-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .section-title {
-      font-size: 28px;
-    }
+  .audience-user-section .row {
+    row-gap: 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
 }
 
 /* ================= SCROLL ANIMATION ================= */
@@ -2188,45 +2335,529 @@ section {
 
 }
 
-/* ================= MOBILE FIX ================= */
+/* =========================================================
+   GLOBAL RESPONSIVE SYSTEM
+========================================================= */
+
+/* ================= LARGE DESKTOP ================= */
+@media (max-width: 1400px) {
+
+  .hero h1,
+  .custom-title {
+    font-size: 46px;
+  }
+
+}
+
+/* ================= LAPTOP ================= */
+@media (max-width: 1200px) {
+
+  /* SECTION TITLE */
+  .section-title,
+  .custom-title,
+  .audience-user-section .section-title {
+    font-size: 40px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  /* GRID */
+  .roadmap-grid,
+  .customization-grid {
+    gap: 22px;
+  }
+
+  /* PROCESS */
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+
+  /* GLOBAL */
+  section {
+    overflow: hidden;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* NAVBAR */
+  #navbar {
+    padding: 12px 0;
+  }
+
+  #navbar .container {
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand {
+    min-width: 0;
+  }
+
+  .navbar-toggler {
+    width: auto !important;
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 6px 10px;
+    border: none;
+    box-shadow: none !important;
+    background: transparent;
+  }
+
+  .navbar-collapse {
+    flex-basis: 100%;
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 16px;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+    padding: 120px 0 80px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  #heroCarousel {
+    max-width: min(100%, 520px);
+    margin: 0 auto 28px;
+  }
+
+  /* STACK IMAGE */
+  .stack-container {
+    height: 360px;
+    margin-top: 40px;
+  }
+
+  .stack-img {
+    max-width: 420px;
+  }
+
+  /* SECTION TITLE */
+  .section-title,
+  .custom-title,
+  .audience-user-section .section-title,
+  .process-poli-section .section-title,
+  #process-poli .section-title {
+    font-size: 34px;
+  }
+
+  /* BUSINESS */
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ROADMAP */
+  .roadmap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CUSTOMIZATION */
+  .customization-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .custom-card-large {
+    grid-column: span 2;
+  }
+
+  /* USECASE */
+  .usecase-img {
+    max-width: 100%;
+  }
+
+  /* PPOB */
+  .ppob-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .ppob-features {
+    justify-content: center;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-card {
+    max-width: 100%;
+  }
+
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  /* card lebih lega */
-  .feature-card {
-    padding: 18px;
-    border-radius: 14px;
+  /* GLOBAL */
+  body {
+    overflow-x: hidden;
   }
 
-  .interactive-card.active {
-    transform: scale(1.02);
+  section {
+    padding: 70px 0 !important;
   }
 
-  .feature-preview {
-    max-height: 0;
+  /* TITLE */
+  .section-title,
+  .custom-title,
+  .audience-user-section .section-title,
+  .process-poli-section .section-title,
+  #process-poli .section-title {
+    font-size: 28px !important;
+    line-height: 1.3;
   }
 
-  .interactive-card.active .feature-preview {
-    max-height: 200px;
+  .section-desc,
+  .custom-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-  /* icon lebih kecil dikit */
-  .feature-header i {
-    font-size: 22px;
+  .navbar-toggler {
+    width: auto !important;
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 6px 10px;
+    border: none;
+    box-shadow: none !important;
+    background: transparent;
   }
 
-  /* text */
-  .feature-header p {
+  /* HERO */
+  .hero {
+    padding: 110px 0 70px !important;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .hero p {
     font-size: 14px;
   }
 
-  /* expand biar nggak sempit */
-  .feature-card.active .feature-expand {
-    max-height: 400px;
+  /* STACK */
+  .stack-container {
+    height: 260px;
   }
 
-  /* gambar mobile */
-  .feature-expand img {
-    max-height: 140px;
+  .stack-img {
+    max-width: 300px;
+    border-radius: 12px;
   }
 
+  /* GRID GLOBAL */
+  .roadmap-grid,
+  .business-grid,
+  .process-grid,
+  .customization-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-card-large {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* CARD */
+  .roadmap-item,
+  .business-card,
+  .process-card,
+  .custom-card,
+  .feature-card,
+  .compare-card,
+  .comp-card,
+  .product-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  /* ICON */
+  .custom-icon,
+  .user-card .icon,
+  .process-card .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  /* ROADMAP */
+  .roadmap-item h3 {
+    font-size: 24px;
+  }
+
+  /* USER CARD */
+  .user-card {
+    padding: 24px 20px;
+  }
+
+  .user-card h5 {
+    font-size: 18px;
+  }
+
+  /* PRICING */
+  .pricing-section .price-card {
+    padding: 24px 20px;
+  }
+
+  .pricing-section .price {
+    font-size: 30px;
+  }
+
+  .pricing-section .btn-pilih {
+    padding: 12px;
+  }
+
+  /* PAYMENT */
+  .payment-box,
+  .bank-box {
+    padding: 18px;
+  }
+
+  /* CONTACT */
+  .contact-box {
+    padding: 35px 24px;
+    text-align: center;
+  }
+
+  /* BUTTON */
+  .hero .btn,
+  .solution-highlight-box .btn,
+  .contact-box .btn,
+  .pricing-section .btn-pilih,
+  #complementary .btn {
+    width: 100%;
+  }
+
+  .btn-close,
+  .carousel-indicators button,
+  .accordion-button,
+  .pricing-section .billing-toggle span {
+    width: auto;
+  }
+
+  /* FAQ */
+  .faq-accordion .accordion-button {
+    font-size: 14px;
+  }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 576px) {
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .navbar-toggler {
+    width: auto !important;
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 6px 10px;
+    border: none;
+    box-shadow: none !important;
+    background: transparent;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .section-title,
+  .custom-title {
+    font-size: 24px !important;
+  }
+
+  .hero p,
+  .custom-subtitle,
+  .section-desc {
+    font-size: 14px;
+  }
+
+  .stack-container {
+    height: 220px;
+  }
+
+  .stack-img {
+    max-width: 240px;
+  }
+
+  .pricing-section .billing-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-section .billing-toggle span {
+    flex: 1;
+    text-align: center;
+  }
+
+  .ppob-content h5 {
+    font-size: 22px;
+  }
+
+  .comp-img {
+    height: 160px;
+  }
+
+}
+
+/* ================= FIX OVERFLOW ================= */
+img,
+svg,
+iframe,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FIX LONG TEXT */
+p,
+span,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* FIX GRID OVERFLOW */
+.row,
+.container,
+.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row > *,
+.roadmap-item,
+.business-card,
+.user-card,
+.usecase-card,
+.process-card,
+.custom-card,
+.compare-card,
+.feature-card,
+.price-card,
+.comp-card,
+.product-card,
+.problem-card-saas,
+.solution-highlight-box,
+.contact-box,
+.modal-content,
+.ppob-content {
+  min-width: 0;
+}
+
+.about-highlight span,
+.tags span,
+.ppob-features span,
+.pricing-section .billing-toggle span,
+.badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.bank-logo,
+.check-icon,
+.icon-box,
+.digital-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    height: 34px;
+  }
+
+  .navbar-brand span {
+    font-size: 15px;
+  }
+
+  .hero-content .row {
+    row-gap: 26px;
+  }
+
+  .about-highlight,
+  .tags,
+  .ppob-features {
+    gap: 8px;
+  }
+
+  .about-highlight span,
+  .tags span,
+  .ppob-features span {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .ppob-card {
+    padding: 24px 18px;
+  }
+
+  .ppob-features span {
+    padding: 9px 12px;
+  }
+
+  .modal-dialog {
+    margin: 0.75rem;
+  }
+
+  .payment-modal {
+    padding: 0;
+  }
+
+  .bank-box .d-flex {
+    align-items: flex-start !important;
+  }
+
+  .contact-info p {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
 }
