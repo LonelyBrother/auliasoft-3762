@@ -2421,6 +2421,10 @@ section {
     background: transparent;
   }
 
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+
   .navbar-collapse {
     flex-basis: 100%;
     background: white;
@@ -2558,6 +2562,10 @@ section {
     border: none;
     box-shadow: none !important;
     background: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none !important;
   }
 
   /* HERO */
@@ -2698,6 +2706,10 @@ section {
     border: none;
     box-shadow: none !important;
     background: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none !important;
   }
 
   .hero h1 {
