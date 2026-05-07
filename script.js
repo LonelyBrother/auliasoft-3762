@@ -1,34 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ================= SMOOTH SCROLL =================
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      const target = document.querySelector(this.getAttribute("href"));
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
+// ================= SMOOTH SCROLL =================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+  anchor.addEventListener("click", function (e) {
+
+    const target = document.querySelector(
+      this.getAttribute("href")
+    );
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    // smooth scroll
+    target.scrollIntoView({
+      behavior: "smooth"
     });
-  });
 
-  // ================= MOBILE NAVBAR CLOSE =================
-const navbarCollapse = document.querySelector(".navbar-collapse");
-const navItems = document.querySelectorAll(".nav-link");
+    // AUTO CLOSE MOBILE NAVBAR
+    const navMenu = document.querySelector(".navbar-collapse");
 
-navItems.forEach(item => {
-  item.addEventListener("click", () => {
+    if (navMenu.classList.contains("show")) {
 
-    // cek kalau navbar mobile sedang terbuka
-    if (navbarCollapse.classList.contains("show")) {
-
-      // tutup collapse bootstrap
       const bsCollapse =
-        bootstrap.Collapse.getInstance(navbarCollapse);
+        bootstrap.Collapse.getInstance(navMenu);
 
       if (bsCollapse) {
         bsCollapse.hide();
       }
+
     }
+
   });
+
 });
 
   // ================= NAVBAR =================
